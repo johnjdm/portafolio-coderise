@@ -1,0 +1,510 @@
+/* --- margin a todo Frontend --- */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin:0px;
+	padding:0px;
+}
+/* --- fin Frontend --- */
+
+/* --- Inicio del body --- */
+body {
+	background:#f2f2f2;
+	margin: 30;
+}
+body .main {
+	font-family: Arial, Helvetica, sans-serif;		
+}
+/* --- fin body --- */
+
+/* --- Estilos del header --- */
+header {
+	width: 100%;
+	height: 80px;
+	padding:20px 0;
+	background: #e60246;
+	overflow: hidden;
+}
+/* --- Estilos de la clase en el header y footer --- */
+.wrapp {
+	max-width: 1000px;
+	width:80%;
+	margin:auto;
+	overflow: hidden;
+  }
+/* --- fin header y footer --- */
+
+/* --- Estilos de la imagen holberton --- */
+.logo {
+	width: 38px;
+	float: left;
+}
+.logo img {
+	width:450%;
+	background-color: White;
+	border: 2px solid black;
+
+}
+/* --- fin imagen --- */
+
+/* --- Estilos del menu cuanto esta activo --- */
+.wrapp a.active {
+	background-color: red;
+	color: rgb(255, 255, 255);
+}
+/* --- fin menu activo --- */
+
+/* --- Estilos del Nav ---- */
+nav {
+	float: right;
+}
+nav ul li {
+	display: inline-block;
+	margin: 0px 5px;
+}
+nav ul li a {
+	display: block;
+	background: #f2f2f2;
+	color: red;
+	padding:10px 20px;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: all 300ms ease;
+	border-bottom-style:solid;
+	border-left-style:solid;
+}
+nav ul li a:hover {
+	color: #fff;
+	background: red;
+}
+/* --- fin Nav --- */
+/* --- fin header --- */
+
+/* --- Estilo de la clase main --- */
+/* --- Estilo del Hero --- */
+.hero {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white; /* ADD THIS LINE */
+    
+    /* Background styles */
+    background-image: url('https://www.noviasalcedo.es/wp-content/uploads/2019/12/programando-scaled.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    /* Text styles */
+    font-size: 5em;
+    /* Margins */
+    margin-top: 0;
+	margin-bottom: 0.5em;
+	font-size: 60px;
+}
+
+.hero .btn {
+    /* Positioning and sizing */
+    display: block;
+    width: 200px;
+    
+    /* Padding and margins */
+    padding: 1em;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Text styles */
+    color: white; /* CHANGE THIS LINE */
+    text-decoration: none;
+    font-size: 1.5em;
+    
+    /* Border styles */
+    border: 3px solid white; /* CHANGE THIS LINE */
+    border-radius: 20px;
+}
+
+#imgPortafolio {
+	border-radius: 50%;
+	width: 200px;
+}
+/* --- fin hero --- */
+
+/* --- Estilo de la clase tituloInicial y subtitulo --- */
+.tituloInicial {
+	background:#77cef0;
+	padding:20px;
+	color:#fff;
+	margin:20px 0;
+	border-radius:6px;
+}
+.subtitulo {
+	padding:20px;
+}
+/* --- fin titulos --- */
+
+/* --- Estilo de la imagen fotoperfil --- */
+.articulo .fotoperfil img {
+	width: 60%;
+	height: 40%;
+	display: block;
+	margin: auto;
+}
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#myImg:hover {opacity: 0.7;}
+/* --- fin  image --- */
+
+/* --- Clase que agregaremos a la imagen --- */
+.image {
+	justify-content: center;
+	position: relative;          /* where the next element will be automatically positioned */
+    display: inline-block;       /* causes element width to shrink to fit content */
+    left: 50%;                   /* moves left side of image/element to center of parent element */
+	transform: translate(-50%);
+	max-width: 80%;
+	top: 10%;
+	border-radius: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.9);
+	background: rgb(143, 193, 225);
+}
+/* --- fin imagen --- */
+
+/* --- Clase que agregaremos cuando el usuario haga scroll la imagen--- */
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	max-width:1000px;
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+/* --- The Modal (background) --- */
+.modal {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	padding-top: 100px; 
+	left: 50;
+	top: 0;
+	width: 60%; 
+	height: 180%; 
+	overflow: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.9); 
+}
+/* --- Modal Content (image) --- */
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+}
+/* --- fin  scroll image --- */
+
+/* --- Caption of Modal Image --- */
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	height: 150px;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+}
+/* --- Add Animation --- */
+.modal-content, #caption {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+}
+/* --- The Close Button de la Image --- */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.close:hover, .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+/* --- fin Button --- */
+  
+/* --- 100% Image Width on Smaller Screens --- */
+@media only screen and (max-width: 700px){
+	.modal-content {
+	  height: 100%;  
+	  width: 100%;	
+	}
+}
+/* --- fin Image --- */
+
+/* --- Estilos del articulo y la clase style-school --- */
+.articulo {
+	float: left;
+	width: 70%;
+	padding:20px 50px 30px 0px;
+	text-align : justify;
+	line-height: 1.5;
+}
+.style-school {
+	color: #E74C3C;
+	font: 100% caption;	
+}
+/* --- fin articulo y style-school --- */
+
+/* --- Clase que agregaremos a la imagen logo USC --- */
+.image-logo {
+	justify-content: center;
+	position: relative;         
+    left: 50%;                   
+	transform: translate(-50%);
+	max-width: 40%;
+}
+/* --- fin imagen --- */
+
+/* --- Acordeon Desplegable --- */
+
+/* --- Estilo Titulo -- */
+#container-main h2{
+    font-size: 38px;
+    text-shadow:4px 4px 5px #167ba0;
+}
+/* --- fin Titulo --- */
+
+/* --- Titulo Accordion --- */
+.accordion-titulo {
+    position: relative;
+    display: block;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    background: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+}
+/* --- fin Titulo --- */
+
+/* --- Efecto Titulo Acordion --- */
+.accordion-titulo:hover {
+    background: #1a40bc;
+}
+.active.accordion {
+    background: #1a40bc;
+    color: #fff;
+}
+.accordion-titulo span.toggle-icon:after {
+	content:"+";
+	font-weight: bold;
+	float: right;
+}
+.active span.toggle-icon:after {
+    content:"-";
+}
+.accordion-titulo span.toggle-icon {
+	margin-left: auto;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight:bold;
+}
+.accordion {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+} 
+.active, .accordion:hover {
+	background-color: #ccc; 
+}
+.accordion-content {
+	padding: 0 18px;
+	display: none;
+	background-color: white;
+	overflow: hidden;
+}
+.accordion-content img {
+    display: block;
+    float: left;
+    margin: 0 15px 10px 0;
+	height: auto;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: 150px;
+}
+/* --- Fin Acordeon Desplegable --- */
+
+/* --- Estilos de la cards --- */
+/* --- Estilo Titulo -- */
+.inicio-cards h2 {
+    font-size: 38px;
+	text-shadow:4px 4px 5px #167ba0;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 34px;
+}
+/* --- fin Titulo --- */
+
+/* --- Estilo efecto container-card -- */
+
+ /* --- fin efecto container-card --- */
+ #container-card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+	transition: 0.3s;
+	width: 45%;
+	border-radius: 5px;
+	margin: 0px 0px 34px 20px;
+	background-color: lightblue;
+	border: 1px solid #E74C3C;
+	opacity: 0.8;
+	float: left;
+ }
+ /* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+ .titulo-cards {
+	padding: 5px;
+	font-family: Helvetica;		
+	text-align: center;
+ }
+ .linea-card {
+	border: 0;
+	border-top: 2px solid #999; 
+	border-bottom: 2px solid #333;
+	height:0;	
+	margin: 0px 0px 24px 24px;	
+	opacity: 0.5;
+ }
+ /* On mouse-over, add a deeper shadow */
+.container-card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+/* Add some padding inside the card container */
+.card {
+	padding: 2px 16px;
+}
+/* --- fin cards --- */
+/* --- fin main --- */
+
+/* --- Estilo titulo portafolio --- */
+.title-portafolio h2 {
+    font-size: 38px;
+	text-shadow:4px 4px 5px #167ba0;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 34px;
+ }
+ /* --- fin efecto container-card --- */
+ #container-card .project {
+	width: 90%;
+ }
+
+/* --- fin cards --- */
+ /* --- fin portafolio --- */
+
+/* --- Estilos aside Redes Sociales --- */
+aside {
+	float: left;
+	width: 30%;
+	background:#3eacd8;
+	color:#fff;
+	padding:20px;
+	border-radius:5px;
+	border-style:dashed; 
+	border-width:2px;
+	margin-top: 30px
+}
+/* --- Estilo Logos Redes Sociales --- */
+.logo-redsocial {
+	height: auto;
+	max-width:40%; 
+	width: auto;
+	float: left;
+	padding: 25px;
+ }
+
+ /* --- fin cards --- */
+/* --- Fin aside --- */
+
+/* --- Estilos del footer --- */
+footer {
+	width: 100%;
+	padding:30px 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #e60246;
+	text-align: center;
+	text-transform: capitalize;
+}
+.fecha {
+	padding: 5px;
+	text-decoration: underline;
+}
+/* --- fin footer --- */
+
+/* --- Estilo Calculadora --- */
+#container-calculadora {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+	transition: 0.3s;
+	width: 100%;
+	border-radius: 15px;
+	margin: 0px 0px 34px 20px;
+	background-color: rgb(65, 150, 207);
+	border: 1px solid #E74C3C;
+	text-align: center;
+}
+#container-calculadora h2 {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+#resultado { 
+	border: 2px dotted #000;
+	padding: 5px;
+}
+.margen-boton {
+	margin-top: 25px;
+}
+/* --- fin Calculadora --- */
